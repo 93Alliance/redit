@@ -41,9 +41,10 @@ func loop() {
 	w, h := wnd.GetSize()
 	g.SingleWindow().Layout(
 		g.Column(
-			g.Style().SetFont(bigFont).To(g.InputTextMultiline(&inputText).Size(float32(w-12), float32(h-60))),
-			g.Row(
-				g.Dummy(float32(w-80), 0),
+			g.Align(g.AlignCenter).To(
+				g.Style().SetFont(bigFont).To(g.InputTextMultiline(&inputText).Size(float32(w-12), float32(h-60))),
+			),
+			g.Align(g.AlignRight).To(
 				g.Style().SetFont(bigFont).To(g.Button("Save").Size(50, 32).OnClick(onSave)),
 			),
 		),
