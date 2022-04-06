@@ -44,7 +44,7 @@ func loop() {
 			g.Style().SetFont(bigFont).To(g.InputTextMultiline(&inputText).Size(float32(w-12), float32(h-60))),
 			g.Row(
 				g.Dummy(float32(w-80), 0),
-				g.Style().SetFont(bigFont).To(g.Button("保存").Size(50, 32).OnClick(onSave)),
+				g.Style().SetFont(bigFont).To(g.Button("Save").Size(50, 32).OnClick(onSave)),
 			),
 		),
 	)
@@ -57,6 +57,6 @@ func main() {
 
 	g.SetDefaultFontFromBytes(defaultFontContent, 20)
 	bigFont = g.AddFontFromBytes("WenQuanDengKuanZhengHei", fontContent, 20)
-	wnd = g.NewMasterWindow("nano", 480, 260, 0)
+	wnd = g.NewMasterWindow(fileName, 480, 260, 0)
 	wnd.Run(loop)
 }
