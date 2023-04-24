@@ -45,7 +45,10 @@ func loop() {
 				g.Style().SetFont(bigFont).To(g.InputTextMultiline(&inputText).Size(float32(w-12), float32(h-60))),
 			),
 			g.Align(g.AlignRight).To(
-				g.Style().SetFont(bigFont).To(g.Button("Save").Size(50, 32).OnClick(onSave)),
+				g.Row(
+					g.Style().SetFont(bigFont).To(g.Button("Save").OnClick(onSave)),
+					g.Dummy(4, 0),
+				),
 			),
 		),
 	)
